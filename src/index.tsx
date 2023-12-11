@@ -18,12 +18,17 @@ const App = () => {
     startService();
   }, []);
 
-  const onClick = (e: React.MouseEvent) => {
+  const onClick = async (e: React.MouseEvent) => {
     if (!ref.current) {
       return;
     }
 
-    console.log(ref.current, "we have access");
+    const result = await ref.current.transform(input, {
+      loader: "jsx",
+      target: "es2015",
+    });
+
+    setCode(result.code);
   };
 
   return (
