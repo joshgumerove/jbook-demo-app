@@ -31,8 +31,9 @@ export const unpkgPathPlugin = () => {
           return {
             loader: "jsx",
             contents: `
-              const message = require('axios');
-              console.log(message);
+              const react = require('react');
+              const reactDOM = require('react-dom');
+              console.log(react, reactDOM);
             `,
           };
         }
