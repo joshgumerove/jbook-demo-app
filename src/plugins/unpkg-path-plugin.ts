@@ -34,7 +34,8 @@ export const unpkgPathPlugin = () => {
           };
         }
 
-        const { data } = await axios.get(args.path);
+        const { data, request } = await axios.get(args.path);
+        console.log("request: ", request);
         return { loader: "jsx", contents: data };
       });
     },
