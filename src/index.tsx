@@ -31,6 +31,7 @@ const App = () => {
       define: {
         "process.env.NODE_ENV": '"production"',
       },
+      global: "window",
     });
 
     // console.log("result: ", result);
