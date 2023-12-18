@@ -30,8 +30,8 @@ const App = () => {
       plugins: [unpkgPathPlugin()],
       define: {
         "process.env.NODE_ENV": '"production"',
+        global: "window",
       },
-      global: "window",
     });
 
     // console.log("result: ", result);
