@@ -16,17 +16,15 @@ export const unpkgPathPlugin = (inputCode: string) => {
           namespace: "a",
         };
       });
-      build.onResolve({ filter: /.*/ }, async (args: any) => {
-        if (args.path.includes("./") || args.path.includes("../")) {
-          return {
-            path: new URL(
-              args.path,
-              "https://unpkg.com" + args.resolveDir + "/"
-            ).href,
-            namespace: "a",
-          };
-        }
 
+      build.onResolve({ filter: /^\.+\// }, (args: any) => {
+        return {
+          path: new URL(args.path, "https://unpkg.com" + args.resolveDir + "/")
+            .href,
+          namespace: "a",
+        };
+      });
+      build.onResolve({ filter: /.*/ }, async (args: any) => {
         return { path: `https://unpkg.com/${args.path}`, namespace: "a" };
       });
 
