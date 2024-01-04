@@ -35,8 +35,12 @@ const App = () => {
       },
     });
 
-    // console.log("result: ", result);
     setCode(result.outputFiles[0].text);
+    try {
+      eval(result.outputFiles[0].text);
+    } catch (err) {
+      alert(err);
+    }
   };
 
   return (
