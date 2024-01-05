@@ -53,9 +53,13 @@ const App = () => {
         <button onClick={onClick}>Submit</button>
       </div>
       <pre>{code}</pre>
-      <iframe src="/test.html" sandbox=""></iframe>
+      <iframe srcDoc={html}></iframe>
     </div>
   );
 };
+
+const html = `
+<h1>Local HTML doc</h1>
+`;
 
 ReactDom.render(<App />, document.querySelector("#root"));
