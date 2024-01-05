@@ -43,6 +43,12 @@ const App = () => {
     }
   };
 
+  const html = `
+  <script>
+  ${code}
+  <script>
+  `;
+
   return (
     <div>
       <textarea
@@ -53,13 +59,9 @@ const App = () => {
         <button onClick={onClick}>Submit</button>
       </div>
       <pre>{code}</pre>
-      <iframe srcDoc={html} title="random" sandbox=""></iframe>
+      <iframe srcDoc={html} title="random" sandbox="allow-scripts"></iframe>
     </div>
   );
 };
-
-const html = `
-<h1>Local HTML doc</h1>
-`;
 
 ReactDom.render(<App />, document.querySelector("#root"));
