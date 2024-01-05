@@ -53,7 +53,7 @@ const App = () => {
         <button onClick={onClick}>Submit</button>
       </div>
       <pre>{code}</pre>
-      <iframe srcDoc={html}></iframe>
+      <iframe srcDoc={html} title="random" sandbox=""></iframe>
     </div>
   );
 };
