@@ -20,7 +20,7 @@ const App = () => {
     startService();
   }, []);
 
-  const onClick = async (e: React.MouseEvent) => {
+  const onClick = async () => {
     if (!ref.current) {
       return;
     }
