@@ -1,3 +1,4 @@
+import "bulmaswatch/superhero/bulmaswatch.min.css";
 import * as esbuild from "esbuild-wasm";
 import React, { useState, useEffect, useRef } from "react";
 import ReactDom from "react-dom";
@@ -65,7 +66,10 @@ const App = () => {
 
   return (
     <div>
-      <CodeEditor initialValue="const a = 1" onChange={(value) => setInput(value)}/>
+      <CodeEditor
+        initialValue="const a = 1"
+        onChange={(value) => setInput(value)}
+      />
       <textarea
         onChange={(e) => setInput(e.target.value)}
         value={input}
