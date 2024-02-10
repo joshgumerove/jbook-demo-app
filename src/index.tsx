@@ -48,10 +48,6 @@ const App = () => {
         initialValue="const a = 1"
         onChange={(value) => setInput(value)}
       />
-      <textarea
-        onChange={(e) => setInput(e.target.value)}
-        value={input}
-      ></textarea>
       <div>
         <button onClick={onClick}>Submit</button>
       </div>
