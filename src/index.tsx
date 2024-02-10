@@ -1,5 +1,5 @@
 import "bulmaswatch/superhero/bulmaswatch.min.css";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import ReactDom from "react-dom";
 import CodeEditor from "./components/code-editor";
 import Preview from "./components/preview";
