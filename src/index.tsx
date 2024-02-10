@@ -5,11 +5,11 @@ import ReactDom from "react-dom";
 import { unpkgPathPlugin } from "./plugins/unpkg-path-plugin";
 import { fetchPlugin } from "./plugins/fetch-plugin";
 import CodeEditor from "./components/code-editor";
-import Preview from './components/preview'
+import Preview from "./components/preview";
 
 const App = () => {
   const ref = useRef<any>();
-  const [code, setCode] = useState('')
+  const [code, setCode] = useState("");
   const [input, setInput] = useState("");
 
   const startService = async () => {
@@ -55,7 +55,7 @@ const App = () => {
       <div>
         <button onClick={onClick}>Submit</button>
       </div>
-      <Preview code={code}/>
+      <Preview code={code} />
     </div>
   );
 };
