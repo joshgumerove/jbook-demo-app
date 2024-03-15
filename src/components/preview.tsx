@@ -16,8 +16,14 @@ const html = `
      const handleError = (err) => {
       const root = document.querySelector('#root');
       root.innerHTML = '<div style="color: red; text-align: center;"><h4>Runtime Error</h4>' + err + '</div>'
-      throw err;
-     }
+      console.error(err)
+     };
+
+     window.addEventListener('error', (event) => {
+      event.preventDefault()
+      handleError(event.error);
+     })
+
      window.addEventListener('message', (event) => {
        try {
          eval(event.data);
