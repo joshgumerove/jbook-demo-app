@@ -57,6 +57,7 @@ const Preview: React.FC<PreviewProps> = ({ code, bundlingStatus }) => {
         sandbox="allow-scripts"
         srcDoc={html}
       />
+      {bundlingStatus && <div className="preview-error">{bundlingStatus}</div>}
     </div>
   );
 };
