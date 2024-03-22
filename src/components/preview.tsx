@@ -37,7 +37,7 @@ const html = `
 </html>
  `;
 
-const Preview: React.FC<PreviewProps> = ({ code }) => {
+const Preview: React.FC<PreviewProps> = ({ code, bundlingStatus }) => {
   const iframe = useRef<any>();
 
   useEffect(() => {
@@ -46,6 +46,8 @@ const Preview: React.FC<PreviewProps> = ({ code }) => {
       iframe.current.contentWindow.postMessage(code, "*");
     }, 50);
   }, [code]);
+
+  console.log("what is bundling status: ", bundlingStatus);
 
   return (
     <div className="preview-wrapper">

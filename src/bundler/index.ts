@@ -10,6 +10,7 @@ const bundle = async (rawCode: string) => {
       wasmURL: "https://unpkg.com/esbuild-wasm@0.8.27/esbuild.wasm",
     });
   }
+
   try {
     const result = await service.build({
       entryPoints: ["index.js"],
@@ -22,9 +23,19 @@ const bundle = async (rawCode: string) => {
       },
     });
 
-    return { code: result.outputFiles[0].text, err: "" };
+    return {
+      code: result.outputFiles[0].text,
+      err: "",
+    };
   } catch (err) {
-    return { code: "", err: "this is an error" };
+    if (err instanceof Error) {
+      return {
+        code: "",
+        err: err.message,
+      };
+    } else {
+      throw err;
+    }
   }
 };
 
