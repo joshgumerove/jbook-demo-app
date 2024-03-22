@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 
 interface PreviewProps {
   code: string;
+  bundlingStatus: string;
 }
 
 const html = `
