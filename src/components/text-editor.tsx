@@ -2,7 +2,7 @@ import React from "react";
 import MDEditor from "@uiw/react-md-editor";
 
 const TextEditor: React.FC = () => {
-  return <div></div>;
+  return <div />;
 };
 
 export default TextEditor;
