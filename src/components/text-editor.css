@@ -3,3 +3,7 @@
   font-size: unset;
   font-weight: unset;
 }
+
+.w-md-editor-toolbar ul {
+  line-height: 1;
+}
