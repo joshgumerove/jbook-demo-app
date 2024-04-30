@@ -1,10 +1,51 @@
 import { ActionType } from "../action-types";
-import { Action } from "../actions";
+import {
+  Action,
+  UpdateCellAction,
+  DeleteCellAction,
+  MoveCellAction,
+  InsertCellBeforeAction,
+} from "../actions";
 
-export const updateCell = () => {};
+export const updateCell = (id: string, content: string): UpdateCellAction => {
+  return {
+    type: ActionType.UPDATE_CELL,
+    payload: {
+      id,
+      content,
+    },
+  };
+};
 
-export const deleteCell = () => {};
+export const deleteCell = (id: string): DeleteCellAction => {
+  return {
+    type: ActionType.DELETE_CELL,
+    payload: id,
+  };
+};
 
-export const moveCell = () => {};
+export const moveCell = (
+  id: string,
+  direction: "up" | "down"
+): MoveCellAction => {
+  return {
+    type: ActionType.MOVE_CELL,
+    payload: {
+      id,
+      direction,
+    },
+  };
+};
 
-export const insertCellBefore = () => {};
+export const insertCellBefore = (
+  id: string,
+  type: "code" | "text"
+): InsertCellBeforeAction => {
+  return {
+    type: ActionType.INSERT_CELL_BEFORE,
+    payload: {
+      id,
+      type,
+    },
+  };
+};
