@@ -47,8 +47,6 @@ const Preview: React.FC<PreviewProps> = ({ code, bundlingStatus }) => {
     }, 50);
   }, [code]);
 
-  console.log("what is bundling status: ", bundlingStatus);
-
   return (
     <div className="preview-wrapper">
       <iframe
