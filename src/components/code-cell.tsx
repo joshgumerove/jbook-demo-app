@@ -24,8 +24,6 @@ const CodeCell: FC<CodeCellProps> = ({ cell }) => {
     };
   }, [cell.content, cell.id]);
 
-  console.log("what is bundle: ", bundle);
-
   return (
     <Resizable direction="vertical">
       <div
@@ -41,7 +39,7 @@ const CodeCell: FC<CodeCellProps> = ({ cell }) => {
             onChange={(value) => updateCell(cell.id, value)}
           />
         </Resizable>
-        {/* <Preview code={code} bundlingStatus={err} /> */}
+        {bundle && <Preview code={bundle.code} bundlingStatus={bundle.err} />}
       </div>
     </Resizable>
   );
